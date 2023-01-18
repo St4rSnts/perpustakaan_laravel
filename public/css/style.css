@@ -1,0 +1,135 @@
+:root{
+    --orange:#252525;
+    --text-color-1:rgb(0, 0, 0);
+    --text-color-2:#eee;
+    --bg-color-1:rgb(255, 255, 255);
+    --bg-color-2:rgb(242, 242, 255);
+    --box-shadow:0 .1rem 0.5rem rgba(0,0,0,.6);
+}
+*{
+    font-family: "Poppins";
+}
+body{
+    background-color: var(--bg-color-2);
+}
+
+.header{
+    margin-left: 0;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    position: fixed;
+    background-color: var(--bg-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+h1{
+    color: var(--orange);
+    font-style: bold;
+}
+.container{
+    padding-top: 4rem;
+}
+form h1{
+    margin-left: 8%;
+}
+form .mb-5{
+    margin: 5%;
+}
+form label{
+    color: var(--text-color-1);
+}
+
+button input{
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+button {
+    margin-left: 40%;
+    margin-bottom: 50px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+button:active {
+    color: #000
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.footer{
+    width: 100%;
+    height: 5rem;
+    background-color: var(--bg-color-1);
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer p{
+    color: var(--text-color-1);
+    padding-top: 1.5rem;
+}
+.footer a{
+    color: var(--text-color-1);
+    text-decoration: none;
+}
+.footer .span{
+    font-style: italic;
+}
